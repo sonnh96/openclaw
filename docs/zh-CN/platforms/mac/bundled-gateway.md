@@ -54,7 +54,7 @@ Plist 位置（按用户）：
 
 日志：
 
-- launchd 标准输出/错误：`/tmp/openclaw/openclaw-gateway.log`
+- launchd 标准输出/错误：`./tmp/openclaw/openclaw-gateway.log`
 
 ## 版本兼容性
 

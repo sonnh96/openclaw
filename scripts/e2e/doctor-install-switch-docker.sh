@@ -17,10 +17,10 @@ docker run --rm -t "$IMAGE_NAME" bash -lc '
   export npm_config_audit=false
 
   # Stub systemd/loginctl so doctor + daemon flows work in Docker.
-  export PATH="/tmp/openclaw-bin:$PATH"
-  mkdir -p /tmp/openclaw-bin
+  export PATH="./tmp/openclaw-bin:$PATH"
+  mkdir -p ./tmp/openclaw-bin
 
-  cat > /tmp/openclaw-bin/systemctl <<"SYSTEMCTL"
+  cat > ./tmp/openclaw-bin/systemctl <<"SYSTEMCTL"
 #!/usr/bin/env bash
 set -euo pipefail
 
@@ -54,9 +54,9 @@ case "$cmd" in
     ;;
 esac
 SYSTEMCTL
-  chmod +x /tmp/openclaw-bin/systemctl
+  chmod +x ./tmp/openclaw-bin/systemctl
 
-  cat > /tmp/openclaw-bin/loginctl <<"LOGINCTL"
+  cat > ./tmp/openclaw-bin/loginctl <<"LOGINCTL"
 #!/usr/bin/env bash
 set -euo pipefail
 
@@ -69,7 +69,7 @@ if [[ "$*" == *"enable-linger"* ]]; then
 fi
 exit 0
 LOGINCTL
-  chmod +x /tmp/openclaw-bin/loginctl
+  chmod +x ./tmp/openclaw-bin/loginctl
 
   # Install the npm-global variant from the local /app source.
   # `npm pack` can emit script output; keep only the tarball name.
@@ -114,7 +114,7 @@ LOGINCTL
     local doctor_expected="$5"
 
     echo "== Flow: $name =="
-    home_dir=$(mktemp -d "/tmp/openclaw-switch-${name}.XXXXXX")
+    home_dir=$(mktemp -d "./tmp/openclaw-switch-${name}.XXXXXX")
     export HOME="$home_dir"
     export USER="testuser"
 

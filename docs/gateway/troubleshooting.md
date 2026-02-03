@@ -112,7 +112,7 @@ Doctor/service will show runtime state (PID/last exit) and log hints.
 **Logs:**
 
 - Preferred: `openclaw logs --follow`
-- File logs (always): `/tmp/openclaw/openclaw-YYYY-MM-DD.log` (or your configured `logging.file`)
+- File logs (always): `./tmp/openclaw/openclaw-YYYY-MM-DD.log` (or your configured `logging.file`)
 - macOS LaunchAgent (if installed): `$OPENCLAW_STATE_DIR/logs/gateway.log` and `gateway.err.log`
 - Linux systemd (if installed): `journalctl --user -u openclaw-gateway[-<profile>].service -n 200 --no-pager`
 - Windows: `schtasks /Query /TN "OpenClaw Gateway (<profile>)" /V /FO LIST`
@@ -326,7 +326,7 @@ grep -n "agents\\|groupChat\\|mentionPatterns\\|channels\\.whatsapp\\.groups\\|c
 ```bash
 openclaw logs --follow
 # or if you want quick filters:
-tail -f "$(ls -t /tmp/openclaw/openclaw-*.log | head -1)" | grep "blocked\\|skip\\|unauthorized"
+tail -f "$(ls -t ./tmp/openclaw/openclaw-*.log | head -1)" | grep "blocked\\|skip\\|unauthorized"
 ```
 
 ### Pairing Code Not Arriving
@@ -439,7 +439,7 @@ ls -la /path/to/your/image.jpg
 **Check 3:** Check media logs
 
 ```bash
-grep "media\\|fetch\\|download" "$(ls -t /tmp/openclaw/openclaw-*.log | head -1)" | tail -20
+grep "media\\|fetch\\|download" "$(ls -t ./tmp/openclaw/openclaw-*.log | head -1)" | tail -20
 ```
 
 ### High Memory Usage
@@ -480,7 +480,7 @@ Notes:
 
 - **Credentials** present for the provider(s) being tried (auth profiles + env vars).
 - **Model routing**: confirm `agents.defaults.model.primary` and fallbacks are models you can access.
-- **Gateway logs** in `/tmp/openclaw/…` for the exact provider error.
+- **Gateway logs** in `./tmp/openclaw/…` for the exact provider error.
 - **Model status**: use `/model status` (chat) or `openclaw models status` (CLI).
 
 ### I’m running on my personal WhatsApp number — why is self-chat weird?
@@ -681,7 +681,7 @@ openclaw channels login --verbose
 
 | Log                               | Location                                                                                                                                                                                                                                                                                                                    |
 | --------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Gateway file logs (structured)    | `/tmp/openclaw/openclaw-YYYY-MM-DD.log` (or `logging.file`)                                                                                                                                                                                                                                                                 |
+| Gateway file logs (structured)    | `./tmp/openclaw/openclaw-YYYY-MM-DD.log` (or `logging.file`)                                                                                                                                                                                                                                                                 |
 | Gateway service logs (supervisor) | macOS: `$OPENCLAW_STATE_DIR/logs/gateway.log` + `gateway.err.log` (default: `~/.openclaw/logs/...`; profiles use `~/.openclaw-<profile>/logs/...`)<br />Linux: `journalctl --user -u openclaw-gateway[-<profile>].service -n 200 --no-pager`<br />Windows: `schtasks /Query /TN "OpenClaw Gateway (<profile>)" /V /FO LIST` |
 | Session files                     | `$OPENCLAW_STATE_DIR/agents/<agentId>/sessions/`                                                                                                                                                                                                                                                                            |
 | Media cache                       | `$OPENCLAW_STATE_DIR/media/`                                                                                                                                                                                                                                                                                                |
@@ -706,7 +706,7 @@ lsof -nP -iTCP:18789 -sTCP:LISTEN
 # Recent activity (RPC log tail)
 openclaw logs --follow
 # Fallback if RPC is down
-tail -20 /tmp/openclaw/openclaw-*.log
+tail -20 ./tmp/openclaw/openclaw-*.log
 ```
 
 ## Reset Everything
@@ -727,7 +727,7 @@ openclaw gateway restart           # or: openclaw gateway
 
 ## Getting Help
 
-1. Check logs first: `/tmp/openclaw/` (default: `openclaw-YYYY-MM-DD.log`, or your configured `logging.file`)
+1. Check logs first: `./tmp/openclaw/` (default: `openclaw-YYYY-MM-DD.log`, or your configured `logging.file`)
 2. Search existing issues on GitHub
 3. Open a new issue with:
    - OpenClaw version

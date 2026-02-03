@@ -25,13 +25,13 @@ describe("parseSystemdExecStart", () => {
   });
 
   it("parses path arguments", () => {
-    const execStart = "/usr/bin/openclaw gateway start --path /tmp/openclaw";
+    const execStart = "/usr/bin/openclaw gateway start --path ./tmp/openclaw";
     expect(parseSystemdExecStart(execStart)).toEqual([
       "/usr/bin/openclaw",
       "gateway",
       "start",
       "--path",
-      "/tmp/openclaw",
+      "./tmp/openclaw",
     ]);
   });
 });

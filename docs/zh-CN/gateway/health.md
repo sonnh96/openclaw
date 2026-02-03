@@ -23,7 +23,7 @@ x-i18n:
 - `openclaw status --deep` — 还会探测运行中的 Gateway网关（支持时进行逐渠道探测）。
 - `openclaw health --json` — 向运行中的 Gateway网关请求完整健康快照（仅限 WS；不直接访问 Baileys socket）。
 - 在 WhatsApp/WebChat 中发送 `/status` 作为独立消息，可获取状态回复而不触发智能体。
-- 日志：尾部查看 `/tmp/openclaw/openclaw-*.log` 并过滤 `web-heartbeat`、`web-reconnect`、`web-auto-reply`、`web-inbound`。
+- 日志：尾部查看 `./tmp/openclaw/openclaw-*.log` 并过滤 `web-heartbeat`、`web-reconnect`、`web-auto-reply`、`web-inbound`。
 
 ## 深度诊断
 

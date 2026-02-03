@@ -35,7 +35,7 @@ extension OnboardingView {
         view.cliInstalled = true
         view.cliInstallLocation = "/usr/local/bin/openclaw"
         view.cliStatus = "Installed"
-        view.workspacePath = "/tmp/openclaw"
+        view.workspacePath = "./tmp/openclaw"
         view.workspaceStatus = "Saved workspace"
         view.anthropicAuthPKCE = AnthropicOAuth.PKCE(verifier: "verifier", challenge: "challenge")
         view.anthropicAuthCode = "code#state"

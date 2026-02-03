@@ -456,8 +456,8 @@ OpenClaw 在以下位置存储**每个智能体的**认证配置文件（OAuth +
 
 ### `logging`
 
-- 默认日志文件：`/tmp/openclaw/openclaw-YYYY-MM-DD.log`
-- 如需稳定路径，将 `logging.file` 设为 `/tmp/openclaw/openclaw.log`。
+- 默认日志文件：`./tmp/openclaw/openclaw-YYYY-MM-DD.log`
+- 如需稳定路径，将 `logging.file` 设为 `./tmp/openclaw/openclaw.log`。
 - 控制台输出可通过以下方式单独调整：
   - `logging.consoleLevel`（默认 `info`，使用 `--verbose` 时提升为 `debug`）
   - `logging.consoleStyle`（`pretty` | `compact` | `json`）
@@ -469,7 +469,7 @@ OpenClaw 在以下位置存储**每个智能体的**认证配置文件（OAuth +
 {
   logging: {
     level: "info",
-    file: "/tmp/openclaw/openclaw.log",
+    file: "./tmp/openclaw/openclaw.log",
     consoleLevel: "info",
     consoleStyle: "pretty",
     redactSensitive: "tools",

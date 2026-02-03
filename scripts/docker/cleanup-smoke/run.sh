@@ -3,7 +3,7 @@ set -euo pipefail
 
 cd /repo
 
-export OPENCLAW_STATE_DIR="/tmp/openclaw-test"
+export OPENCLAW_STATE_DIR="./tmp/openclaw-test"
 export OPENCLAW_CONFIG_PATH="${OPENCLAW_STATE_DIR}/openclaw.json"
 
 echo "==> Build"

@@ -238,7 +238,7 @@ Quick answers plus deeper troubleshooting for real-world setups (local dev, VPS,
    If RPC is down, fall back to:
 
    ```bash
-   tail -f "$(ls -t /tmp/openclaw/openclaw-*.log | head -1)"
+   tail -f "$(ls -t ./tmp/openclaw/openclaw-*.log | head -1)"
    ```
 
    File logs are separate from service logs; see [Logging](/logging) and [Troubleshooting](/gateway/troubleshooting).
@@ -2464,7 +2464,7 @@ Protocol details: [Gateway protocol](/gateway/protocol).
 File logs (structured):
 
 ```
-/tmp/openclaw/openclaw-YYYY-MM-DD.log
+./tmp/openclaw/openclaw-YYYY-MM-DD.log
 ```
 
 You can set a stable path via `logging.file`. File log level is controlled by `logging.level`. Console verbosity is controlled by `--verbose` and `logging.consoleLevel`.

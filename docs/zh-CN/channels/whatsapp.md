@@ -389,7 +389,7 @@ WhatsApp 以**语音消息**（PTT 气泡）发送音频。
 ## 日志 + 故障排除
 
 - 子系统：`whatsapp/inbound`、`whatsapp/outbound`、`web-heartbeat`、`web-reconnect`。
-- 日志文件：`/tmp/openclaw/openclaw-YYYY-MM-DD.log`（可配置）。
+- 日志文件：`./tmp/openclaw/openclaw-YYYY-MM-DD.log`（可配置）。
 - 故障排除指南：[Gateway网关故障排除](/gateway/troubleshooting)。
 
 ## 故障排除（快速）

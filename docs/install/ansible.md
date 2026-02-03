@@ -127,7 +127,7 @@ ansible-galaxy collection install -r requirements.yml
 # 4. Run playbook
 ./run-playbook.sh
 
-# Or run directly (then manually execute /tmp/openclaw-setup.sh after)
+# Or run directly (then manually execute ./tmp/openclaw-setup.sh after)
 # ansible-playbook playbook.yml --ask-become-pass
 ```
 

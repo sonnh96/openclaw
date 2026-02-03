@@ -112,7 +112,7 @@ openclaw health
 - **状态存储位置：**
   - 凭据：`~/.openclaw/credentials/`
   - 会话：`~/.openclaw/agents/<agentId>/sessions/`
-  - 日志：`/tmp/openclaw/`
+  - 日志：`./tmp/openclaw/`
 
 ## 凭据存储映射
 

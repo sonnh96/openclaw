@@ -454,8 +454,8 @@ Metadata written by CLI wizards (`onboard`, `configure`, `doctor`).
 
 ### `logging`
 
-- Default log file: `/tmp/openclaw/openclaw-YYYY-MM-DD.log`
-- If you want a stable path, set `logging.file` to `/tmp/openclaw/openclaw.log`.
+- Default log file: `./tmp/openclaw/openclaw-YYYY-MM-DD.log`
+- If you want a stable path, set `logging.file` to `./tmp/openclaw/openclaw.log`.
 - Console output can be tuned separately via:
   - `logging.consoleLevel` (defaults to `info`, bumps to `debug` when `--verbose`)
   - `logging.consoleStyle` (`pretty` | `compact` | `json`)
@@ -467,7 +467,7 @@ Metadata written by CLI wizards (`onboard`, `configure`, `doctor`).
 {
   logging: {
     level: "info",
-    file: "/tmp/openclaw/openclaw.log",
+    file: "./tmp/openclaw/openclaw.log",
     consoleLevel: "info",
     consoleStyle: "pretty",
     redactSensitive: "tools",

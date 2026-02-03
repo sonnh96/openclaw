@@ -119,7 +119,7 @@ Doctor/service 会显示运行时状态（PID/上次退出码）和日志提示�
 **日志：**
 
 - 推荐：`openclaw logs --follow`
-- 文件日志（始终可用）：`/tmp/openclaw/openclaw-YYYY-MM-DD.log`（或你配置的 `logging.file`）
+- 文件日志（始终可用）：`./tmp/openclaw/openclaw-YYYY-MM-DD.log`（或你配置的 `logging.file`）
 - macOS LaunchAgent（如已安装）：`$OPENCLAW_STATE_DIR/logs/gateway.log` 和 `gateway.err.log`
 - Linux systemd（如已安装）：`journalctl --user -u openclaw-gateway[-<profile>].service -n 200 --no-pager`
 - Windows：`schtasks /Query /TN "OpenClaw Gateway网关 (<profile>)" /V /FO LIST`
@@ -332,7 +332,7 @@ grep -n "agents\\|groupChat\\|mentionPatterns\\|channels\\.whatsapp\\.groups\\|c
 ```bash
 openclaw logs --follow
 # 或者快速过滤：
-tail -f "$(ls -t /tmp/openclaw/openclaw-*.log | head -1)" | grep "blocked\\|skip\\|unauthorized"
+tail -f "$(ls -t ./tmp/openclaw/openclaw-*.log | head -1)" | grep "blocked\\|skip\\|unauthorized"
 ```
 
 ### 配对码未送达
@@ -445,7 +445,7 @@ ls -la /path/to/your/image.jpg
 **检查 3：** 查看媒体日志
 
 ```bash
-grep "media\\|fetch\\|download" "$(ls -t /tmp/openclaw/openclaw-*.log | head -1)" | tail -20
+grep "media\\|fetch\\|download" "$(ls -t ./tmp/openclaw/openclaw-*.log | head -1)" | tail -20
 ```
 
 ### 内存使用过高
@@ -486,7 +486,7 @@ openclaw doctor --fix
 
 - 正在使用的提供商是否存在**凭据**（认证配置文件 + 环境变量）。
 - **模型路由**：确认 `agents.defaults.model.primary` 和回退模型是你能访问的模型。
-- `/tmp/openclaw/…` 中的 **Gateway网关日志**查看具体的提供商错误。
+- `./tmp/openclaw/…` 中的 **Gateway网关日志**查看具体的提供商错误。
 - **模型状态**：使用 `/model status`（聊天中）或 `openclaw models status`（CLI）。
 
 ### 我用个人 WhatsApp 号码运行 — 为什么自聊行为异常？
@@ -687,7 +687,7 @@ openclaw channels login --verbose
 
 | 日志                          | 位置                                                                                                                                                                                                                                                                                                                          |
 | ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Gateway网关文件日志（结构化） | `/tmp/openclaw/openclaw-YYYY-MM-DD.log`（或 `logging.file`）                                                                                                                                                                                                                                                                  |
+| Gateway网关文件日志（结构化） | `./tmp/openclaw/openclaw-YYYY-MM-DD.log`（或 `logging.file`）                                                                                                                                                                                                                                                                  |
 | Gateway网关服务日志（管理器） | macOS：`$OPENCLAW_STATE_DIR/logs/gateway.log` + `gateway.err.log`（默认：`~/.openclaw/logs/...`；profile 使用 `~/.openclaw-<profile>/logs/...`）<br />Linux：`journalctl --user -u openclaw-gateway[-<profile>].service -n 200 --no-pager`<br />Windows：`schtasks /Query /TN "OpenClaw Gateway网关 (<profile>)" /V /FO LIST` |
 | 会话文件                      | `$OPENCLAW_STATE_DIR/agents/<agentId>/sessions/`                                                                                                                                                                                                                                                                              |
 | 媒体缓存                      | `$OPENCLAW_STATE_DIR/media/`                                                                                                                                                                                                                                                                                                  |
@@ -712,7 +712,7 @@ lsof -nP -iTCP:18789 -sTCP:LISTEN
 # 最近活动（RPC 日志尾部）
 openclaw logs --follow
 # RPC 不可用时的备选方案
-tail -20 /tmp/openclaw/openclaw-*.log
+tail -20 ./tmp/openclaw/openclaw-*.log
 ```
 
 ## 重置一切
@@ -733,7 +733,7 @@ openclaw gateway restart           # 或：openclaw gateway
 
 ## 获取帮助
 
-1. 先查看日志：`/tmp/openclaw/`（默认：`openclaw-YYYY-MM-DD.log`，或你配置的 `logging.file`）
+1. 先查看日志：`./tmp/openclaw/`（默认：`openclaw-YYYY-MM-DD.log`，或你配置的 `logging.file`）
 2. 在 GitHub 上搜索现有 issues
 3. 提交新 issue 并附上：
    - OpenClaw 版本

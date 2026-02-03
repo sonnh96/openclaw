@@ -115,13 +115,13 @@ vi.mock("./chrome.js", () => ({
     return {
       pid: 123,
       exe: { kind: "chrome", path: "/fake/chrome" },
-      userDataDir: "/tmp/openclaw",
+      userDataDir: "./tmp/openclaw",
       cdpPort: profile.cdpPort,
       startedAt: Date.now(),
       proc,
     };
   }),
-  resolveOpenClawUserDataDir: vi.fn(() => "/tmp/openclaw"),
+  resolveOpenClawUserDataDir: vi.fn(() => "./tmp/openclaw"),
   stopOpenClawChrome: vi.fn(async () => {
     reachable = false;
   }),

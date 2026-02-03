@@ -27,7 +27,7 @@ OpenClaw 在两个地方记录日志：
 
 默认情况下，Gateway网关会在以下路径写入滚动日志文件：
 
-`/tmp/openclaw/openclaw-YYYY-MM-DD.log`
+`./tmp/openclaw/openclaw-YYYY-MM-DD.log`
 
 日期使用 Gateway网关主机的本地时区。
 
@@ -109,7 +109,7 @@ openclaw channels logs --channel whatsapp
 {
   "logging": {
     "level": "info",
-    "file": "/tmp/openclaw/openclaw-YYYY-MM-DD.log",
+    "file": "./tmp/openclaw/openclaw-YYYY-MM-DD.log",
     "consoleLevel": "info",
     "consoleStyle": "pretty",
     "redactSensitive": "tools",

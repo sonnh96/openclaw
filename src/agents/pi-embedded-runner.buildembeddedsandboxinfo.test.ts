@@ -107,8 +107,8 @@ describe("buildEmbeddedSandboxInfo", () => {
     const sandbox = {
       enabled: true,
       sessionKey: "session:test",
-      workspaceDir: "/tmp/openclaw-sandbox",
-      agentWorkspaceDir: "/tmp/openclaw-workspace",
+      workspaceDir: "./tmp/openclaw-sandbox",
+      agentWorkspaceDir: "./tmp/openclaw-workspace",
       workspaceAccess: "none",
       containerName: "openclaw-sbx-test",
       containerWorkdir: "/workspace",
@@ -137,7 +137,7 @@ describe("buildEmbeddedSandboxInfo", () => {
 
     expect(buildEmbeddedSandboxInfo(sandbox)).toEqual({
       enabled: true,
-      workspaceDir: "/tmp/openclaw-sandbox",
+      workspaceDir: "./tmp/openclaw-sandbox",
       workspaceAccess: "none",
       agentWorkspaceMount: undefined,
       browserBridgeUrl: "http://localhost:9222",
@@ -149,8 +149,8 @@ describe("buildEmbeddedSandboxInfo", () => {
     const sandbox = {
       enabled: true,
       sessionKey: "session:test",
-      workspaceDir: "/tmp/openclaw-sandbox",
-      agentWorkspaceDir: "/tmp/openclaw-workspace",
+      workspaceDir: "./tmp/openclaw-sandbox",
+      agentWorkspaceDir: "./tmp/openclaw-workspace",
       workspaceAccess: "none",
       containerName: "openclaw-sbx-test",
       containerWorkdir: "/workspace",
@@ -180,7 +180,7 @@ describe("buildEmbeddedSandboxInfo", () => {
       }),
     ).toEqual({
       enabled: true,
-      workspaceDir: "/tmp/openclaw-sandbox",
+      workspaceDir: "./tmp/openclaw-sandbox",
       workspaceAccess: "none",
       agentWorkspaceMount: undefined,
       hostBrowserAllowed: false,

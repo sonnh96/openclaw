@@ -5,7 +5,7 @@ import { createTelegramBot, getTelegramSequentialKey } from "./bot.js";
 import { resolveTelegramFetch } from "./fetch.js";
 
 const { sessionStorePath } = vi.hoisted(() => ({
-  sessionStorePath: `/tmp/openclaw-telegram-throttler-${Math.random().toString(16).slice(2)}.json`,
+  sessionStorePath: `./tmp/openclaw-telegram-throttler-${Math.random().toString(16).slice(2)}.json`,
 }));
 const { loadWebMedia } = vi.hoisted(() => ({
   loadWebMedia: vi.fn(),

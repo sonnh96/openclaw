@@ -96,7 +96,7 @@ x-i18n:
   // 日志
   logging: {
     level: "info",
-    file: "/tmp/openclaw/openclaw.log",
+    file: "./tmp/openclaw/openclaw.log",
     consoleLevel: "info",
     consoleStyle: "pretty",
     redactSensitive: "tools",

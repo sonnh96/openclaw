@@ -710,7 +710,7 @@ Doctor 可以为你生成一个：`openclaw doctor --generate-gateway-token`。
 
 ### 审计
 
-1. 检查 Gateway网关日志：`/tmp/openclaw/openclaw-YYYY-MM-DD.log`（或 `logging.file`）。
+1. 检查 Gateway网关日志：`./tmp/openclaw/openclaw-YYYY-MM-DD.log`（或 `logging.file`）。
 2. 审查相关的记录：`~/.openclaw/agents/<agentId>/sessions/*.jsonl`。
 3. 审查最近的配置更改（任何可能扩大访问的更改：`gateway.bind`、`gateway.auth`、私聊/群组策略、`tools.elevated`、插件更改）。
 

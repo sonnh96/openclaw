@@ -21,7 +21,7 @@ vi.mock("../auto-reply/skill-commands.js", () => ({
 }));
 
 const { sessionStorePath } = vi.hoisted(() => ({
-  sessionStorePath: `/tmp/openclaw-telegram-bot-${Math.random().toString(16).slice(2)}.json`,
+  sessionStorePath: `./tmp/openclaw-telegram-bot-${Math.random().toString(16).slice(2)}.json`,
 }));
 
 function resolveSkillCommands(config: Parameters<typeof listNativeCommandSpecsForConfig>[0]) {

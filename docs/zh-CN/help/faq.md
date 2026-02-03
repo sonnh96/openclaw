@@ -245,7 +245,7 @@ x-i18n:
    如果 RPC 不可用，回退到：
 
    ```bash
-   tail -f "$(ls -t /tmp/openclaw/openclaw-*.log | head -1)"
+   tail -f "$(ls -t ./tmp/openclaw/openclaw-*.log | head -1)"
    ```
 
    文件日志与服务日志是分开的；参阅[日志](/logging)和[故障排除](/gateway/troubleshooting)。
@@ -2279,7 +2279,7 @@ openclaw tui --url ws://<host>:18789 --token <token>
 文件日志（结构化）：
 
 ```
-/tmp/openclaw/openclaw-YYYY-MM-DD.log
+./tmp/openclaw/openclaw-YYYY-MM-DD.log
 ```
 
 你可以通过 `logging.file` 设置稳定路径。文件日志级别由 `logging.level` 控制。控制台详细度由 `--verbose` 和 `logging.consoleLevel` 控制。

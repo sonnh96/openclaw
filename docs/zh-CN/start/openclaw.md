@@ -233,7 +233,7 @@ openclaw status --deep   # 添加 Gateway网关健康探测（Telegram + Discord
 openclaw health --json   # Gateway网关健康快照（WS）
 ```
 
-日志位于 `/tmp/openclaw/`（默认：`openclaw-YYYY-MM-DD.log`）。
+日志位于 `./tmp/openclaw/`（默认：`openclaw-YYYY-MM-DD.log`）。
 
 ## 后续步骤
 

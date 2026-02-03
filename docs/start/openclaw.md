@@ -226,7 +226,7 @@ openclaw status --deep   # adds gateway health probes (Telegram + Discord)
 openclaw health --json   # gateway health snapshot (WS)
 ```
 
-Logs live under `/tmp/openclaw/` (default: `openclaw-YYYY-MM-DD.log`).
+Logs live under `./tmp/openclaw/` (default: `openclaw-YYYY-MM-DD.log`).
 
 ## Next steps
 

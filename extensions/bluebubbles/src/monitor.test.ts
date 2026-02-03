@@ -223,7 +223,7 @@ function createMockRuntime(): PluginRuntime {
     },
     state: {
       resolveStateDir: vi.fn(
-        () => "/tmp/openclaw",
+        () => "./tmp/openclaw",
       ) as unknown as PluginRuntime["state"]["resolveStateDir"],
     },
   };

@@ -11,7 +11,7 @@ echo "Running plugins Docker E2E..."
 docker run --rm -t "$IMAGE_NAME" bash -lc '
   set -euo pipefail
 
-  home_dir=$(mktemp -d "/tmp/openclaw-plugins-e2e.XXXXXX")
+  home_dir=$(mktemp -d "./tmp/openclaw-plugins-e2e.XXXXXX")
   export HOME="$home_dir"
   mkdir -p "$HOME/.openclaw/extensions/demo-plugin"
 
@@ -70,7 +70,7 @@ console.log("ok");
 NODE
 
   echo "Testing tgz install flow..."
-  pack_dir="$(mktemp -d "/tmp/openclaw-plugin-pack.XXXXXX")"
+  pack_dir="$(mktemp -d "./tmp/openclaw-plugin-pack.XXXXXX")"
   mkdir -p "$pack_dir/package"
   cat > "$pack_dir/package/package.json" <<'"'"'JSON'"'"'
 {
@@ -118,7 +118,7 @@ console.log("ok");
 NODE
 
   echo "Testing install from local folder (plugins.load.paths)..."
-  dir_plugin="$(mktemp -d "/tmp/openclaw-plugin-dir.XXXXXX")"
+  dir_plugin="$(mktemp -d "./tmp/openclaw-plugin-dir.XXXXXX")"
   cat > "$dir_plugin/package.json" <<'"'"'JSON'"'"'
 {
   "name": "@openclaw/demo-plugin-dir",
@@ -164,7 +164,7 @@ console.log("ok");
 NODE
 
   echo "Testing install from npm spec (file:)..."
-  file_pack_dir="$(mktemp -d "/tmp/openclaw-plugin-filepack.XXXXXX")"
+  file_pack_dir="$(mktemp -d "./tmp/openclaw-plugin-filepack.XXXXXX")"
   mkdir -p "$file_pack_dir/package"
   cat > "$file_pack_dir/package/package.json" <<'"'"'JSON'"'"'
 {

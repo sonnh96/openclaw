@@ -272,7 +272,7 @@ describe("web auto-reply", () => {
   });
   it("emits heartbeat logs with connection metadata", async () => {
     vi.useFakeTimers();
-    const logPath = `/tmp/openclaw-heartbeat-${crypto.randomUUID()}.log`;
+    const logPath = `./tmp/openclaw-heartbeat-${crypto.randomUUID()}.log`;
     setLoggerOverride({ level: "trace", file: logPath });
 
     const runtime = {
@@ -313,7 +313,7 @@ describe("web auto-reply", () => {
     expect(content).toMatch(/messagesHandled/);
   });
   it("logs outbound replies to file", async () => {
-    const logPath = `/tmp/openclaw-log-test-${crypto.randomUUID()}.log`;
+    const logPath = `./tmp/openclaw-log-test-${crypto.randomUUID()}.log`;
     setLoggerOverride({ level: "trace", file: logPath });
 
     let capturedOnMessage:
